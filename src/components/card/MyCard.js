@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Card(props){
+function MyCard(props){
 
     const {annonce} = props
     return(
@@ -25,13 +25,12 @@ function Card(props){
                     </div>
                 </div>
                 <div className="card-footer d-flex justify-content-between bg-light border">
-                    <Link to={`/DetailAnnonce/${annonce.idAnnonce}`} className="btn btn-sm text-dark p-0">
+                    <Link to={`/MyDetailAnnonce/${annonce.idAnnonce}`} className="btn btn-sm text-dark p-0">
                         <i className="fas fa-eye text-primary mr-1" />
                         Voir detail
                     </Link>
                     <div className="btn btn-sm text-dark p-0">
-                        <i className="far fa-heart text-primary mr-1"></i>
-                        {/* <i className="fas fa-heart text-primary mr-1"></i> */}
+                        Vendue
                     </div>
                 </div>
             </div>
@@ -39,4 +38,4 @@ function Card(props){
     )
 }
 
-export default Card
+export default MyCard

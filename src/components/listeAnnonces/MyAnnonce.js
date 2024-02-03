@@ -2,7 +2,7 @@ import React from 'react';
 import MyCarroussel from './MyCarroussel';
 
 
-function Annonce(props){
+function MyAnnonce(props){
 
     const {annonce} = props
     return(
@@ -66,10 +66,10 @@ function Annonce(props){
 
                     <div className="d-flex flex-row justify-content-end mt-2 mb-2">
                             <button className='btn btn-primary'>
-                                Envoyer un message
+                                Modifier
                             </button>
-                            <button className='btn btn-outline-primary mx-5'>
-                                Appeler le vendeur
+                            <button className='btn btn-outline-danger mx-5'>
+                                Supprimer
                             </button>
                         </div> 
                 </div>
@@ -78,4 +78,4 @@ function Annonce(props){
     )
 }
 
-export default Annonce
+export default MyAnnonce

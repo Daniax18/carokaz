@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 
 
 function Navbar () {
@@ -28,15 +29,16 @@ function Navbar () {
             {/* Topbar End */}
 
             {/* Navbar Start */}
-            <div className="d-flex flex-row align-items-center py-3 px-xl-5">
-                <div className="col-lg-3 col-xs-12 col-md-12">
-                    <a href="index.html" className="navbar-brand d-flex align-items-center">
+            <div className="row align-items-center py-3 px-xl-5 justify-content-between">
+                <div className="col-lg-2 col-xs-12 col-md-12">
+                    
+                    <Link to="/" className="navbar-brand d-flex align-items-center"> 
                         <h1 className="m-0">
                             <i className="fa fa-car text-primary me-3" />CAR'OKAZ
                         </h1>
-                    </a>
+                    </Link>
                 </div>
-                <div className="col-lg-6 col-xs-12 col-md-12 text-left">
+                <div className="col-lg-4 col-xs-12 col-md-12 text-left">
                     <form action>
                         <div className="input-group">
                             <input type="text" className="form-control" placeholder="Search for cars..." />
@@ -48,9 +50,30 @@ function Navbar () {
                         </div>
                     </form>
                 </div>
-                <div className="d-flex flex-row">
+                {/* <div className="col-lg-4 col-xs-12 d-flex flex-row">
                     <a href className="nav-item nav-link">Login</a>
                     <a href className="nav-item nav-link">Register</a>
+                </div> */}
+                <div className="col-lg-5 col-xs-12 d-flex flex-row">
+                <Link 
+                        to="/Messages" 
+                        className="nav-item nav-link"
+                    >
+                        Message
+                    </Link>
+                    <Link 
+                        to="/MesAnnonces" 
+                        className="nav-item nav-link"
+                    >
+                        Mes annonces
+                    </Link>
+                    <Link 
+                        to="/Favoris" 
+                        className="nav-item nav-link"
+                    >
+                        Mes favoris
+                    </Link>
+                    <a href className="nav-item nav-link"> Deconnexion </a>
                 </div>
 
             </div>

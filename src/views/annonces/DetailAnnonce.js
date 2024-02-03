@@ -5,6 +5,7 @@ import Footer from '../../components/footer/Footer';
 import Annonce from '../../components/listeAnnonces/Annonce';
 import { useParams } from 'react-router-dom';
 import Loader from '../../components/loader/Loader';
+import MyAnnonce from '../../components/listeAnnonces/MyAnnonce';
 
 function DetailAnnonce(){ 
     const { id_annonce } = useParams();
@@ -41,7 +42,8 @@ function DetailAnnonce(){
                 </div>
             </div>
             {/* Page Header End */}
-            <Annonce annonce = {annonce} />
+            {/* <Annonce annonce = {annonce} /> */}
+            <MyAnnonce annonce = {annonce} />
             <Footer />
             </>
         )}

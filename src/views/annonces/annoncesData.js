@@ -7,7 +7,7 @@ const annonces = [
     voiture: {
       idVoiture: 'v1',
       nomModele: 'Q7 Audi',
-      img:['logo192.png', 'logo192.png'],
+      img:['https://bootdey.com/img/Content/avatar/avatar3.png', 'https://bootdey.com/img/Content/avatar/avatar1.png'],
       place : '3',
       energie : 'Diesel',
       kilometrage : '1500',
@@ -27,7 +27,7 @@ const annonces = [
     voiture: {
       idVoiture: 'v1',
       nomModele: 'Q8 Audi',
-      img:['logo192.png', 'logo192.png'],
+      img:['https://bootdey.com/img/Content/avatar/avatar3.png', 'https://bootdey.com/img/Content/avatar/avatar1.png'],
       place : '3',
       energie : 'Diesel',
       kilometrage : '1500',
@@ -47,7 +47,7 @@ const annonces = [
     voiture: {
       idVoiture: 'v1',
       nomModele: 'Q8 Audi',
-      img:['logo192.png', 'logo192.png'],
+      img:['https://bootdey.com/img/Content/avatar/avatar3.png', 'https://bootdey.com/img/Content/avatar/avatar1.png'],
       place : '3',
       energie : 'Diesel',
       kilometrage : '1500',
@@ -67,7 +67,7 @@ const annonces = [
     voiture: {
       idVoiture: 'v1',
       nomModele: 'Q8 Audi',
-      img:['logo192.png', 'logo192.png'],
+      img:['https://bootdey.com/img/Content/avatar/avatar3.png', 'https://bootdey.com/img/Content/avatar/avatar1.png'],
       place : '3',
       energie : 'Diesel',
       kilometrage : '1500',

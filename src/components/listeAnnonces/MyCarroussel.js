@@ -5,11 +5,11 @@ function MyCarroussel(props){
     const {annonce} = props
     
     const productTemplate = (imgSrc) => (
-      <img className="w-100 h-100" src={`img/${imgSrc}`} alt="Image" />
+      <img className="w-100 h-100" src={imgSrc} alt="Image" />
     );
   
     return (
-        <div className="col-lg-5 pb-5">
+        
             <Carousel
                 value={annonce.voiture.img}
                 numVisible={1}
@@ -31,7 +31,7 @@ function MyCarroussel(props){
                 autoplayInterval={3000}
                 itemTemplate={productTemplate}
             />
-      </div>
+      
     );
   };
   
