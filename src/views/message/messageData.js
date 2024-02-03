@@ -19,6 +19,4 @@ const inboxes = [
     }
 ]
 
-
-
 export default {inboxes};

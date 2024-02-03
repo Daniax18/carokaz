@@ -92,4 +92,59 @@ const marques = [
     }
 ]
 
-export default {annonces, marques};
+const boites = [
+  {
+      id : 'B1',
+      nom : 'Manuelle'
+  },
+  {
+      id : 'B2',
+      nom : 'Automatique'
+  }
+]
+
+const energie = [
+  {
+      id : 'E1',
+      nom : 'Gasoil'
+  },
+  {
+      id : 'E2',
+      nom : 'Essence'
+  }
+]
+
+const categories = [
+  {
+      id : 'C1',
+      nom : 'SUV'
+  },
+  {
+      id : 'C2',
+      nom : 'Citadine'
+  }
+]
+
+const modeles = [
+  {
+      id : 'MO1',
+      nom : 'Q7'
+  },
+  {
+      id : 'MO2',
+      nom : 'Q5'
+  }
+]
+
+const couleurs = [
+  {
+      id : 'CO1',
+      nom : 'Rouge'
+  },
+  {
+      id : 'CO2',
+      nom : 'Vert'
+  }
+]
+
+export default {annonces, marques, boites, energie, modeles, couleurs, categories};

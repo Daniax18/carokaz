@@ -8,7 +8,7 @@ import Loader from '../../components/loader/Loader';
 
 function Annonces(){
 
-    const { annonces, marques } = annoncesData;
+    const { annonces, marques, boites, categories, modeles, energie, couleurs } = annoncesData;
     
     const [showLoader, setShowLoader] = useState(true);
     useEffect(() => {
@@ -46,7 +46,12 @@ function Annonces(){
                     <div className="container-fluid pt-5">
                         <div className="row px-xl-5">
                             <div className="col-lg-3 col-md-12">
-                                <Filter title = "Recherche par marque" data = {marques} />
+                                <Filter title = "Categories" data = {categories} />
+                                <Filter title = "Marques" data = {marques} />
+                                <Filter title = "Modeles" data = {modeles} />
+                                <Filter title = "Energie" data = {energie} />
+                                <Filter title = "Boites" data = {boites} />
+                                <Filter title = "Couleur" data = {couleurs} />
                             </div>
                             <div className="col-lg-9 col-md-12">
                                 <ListeAnnonces annonces = {annonces}  />
