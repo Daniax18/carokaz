@@ -9,22 +9,37 @@ import MyAnnonce from '../../components/listeAnnonces/MyAnnonce';
 
 function DetailAnnonce(){ 
     const { id_annonce } = useParams();
-    const annonce = annoncesData.annonces[id_annonce];
+    const [loading, setLoading] = useState(true);
+    const [data, setData]=useState([]);
 
-
-    const [showLoader, setShowLoader] = useState(true);
     useEffect(() => {
-        const loaderTimeout = setTimeout(() => {
-            setShowLoader(false);
-        }, 1000);
+        // Simulating an asynchronous data fetch
+        setLoading(true);
+        setTimeout(() => {
+            let url = process.env.REACT_APP_API_URL + 'annonces/front/' + id_annonce;
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+              if( this.readyState === 4 ){
+                if( this.status === 200 ){
+                  let response = JSON.parse(this.responseText);
+                //   setItems(response);
+                  console.log(response);
+                  setLoading(false);
+                  setData(response.data);
+                }
+              }
+            };
+            // console.log(url);
+            xhttp.open( "GET" , url, true );
+            xhttp.send(null);
+        }, 1000); // Simulating a 1-second delay
+    }, []); // Empty dependency array to run the effect only once on component mount
 
-        // EN ATTENTE DATA ETO
-        return () => clearTimeout(loaderTimeout);
-        }, []
-    );
+
+
     return(
         <div>
-             {showLoader ? (
+             {loading ? (
         // Loader component or message while loading
         <Loader />
       ) : (
@@ -42,8 +57,8 @@ function DetailAnnonce(){
                 </div>
             </div>
             {/* Page Header End */}
-            {/* <Annonce annonce = {annonce} /> */}
-            <MyAnnonce annonce = {annonce} />
+            <Annonce annonce = {data} />
+            {/* <MyAnnonce annonce = {annonce} /> */}
             <Footer />
             </>
         )}

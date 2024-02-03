@@ -1,30 +1,47 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/nav/Navbar';
-import annoncesData from './annoncesData'
-import ListeAnnonces from '../../components/listeAnnonces/ListeAnnonces';
 import Footer from '../../components/footer/Footer';
 import Loader from '../../components/loader/Loader';
+import ListFavoris from '../../components/listeAnnonces/ListeFavoris';
 
 function Favoris(){
 
-    const { annonces } = annoncesData;
-    console.log(annonces)
-    
-    const [showLoader, setShowLoader] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [data, setData]=useState([]);
+    const token = localStorage.getItem('token');
+
     useEffect(() => {
-        const loaderTimeout = setTimeout(() => {
-            setShowLoader(false);
-        }, 1000);
-
-        // EN ATTENTE DATA ETO
-        return () => clearTimeout(loaderTimeout);
-        }, []
-    );
-
+        const fetchData = async () => {
+          try {
+            setLoading(true);
+            let url = process.env.REACT_APP_API_URL + 'favoris/favoris/USR3';
+            let response = await fetch(url, {
+              method: 'GET',
+              headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+              },
+            });
+    
+            if (response.ok) {
+              let data = await response.json();
+              setData(data.data);
+            } else {
+              console.error('Erreur de la requête:', response);
+            }
+          } catch (error) {
+            console.error('Erreur lors de la récupération des données:', error);
+          } finally {
+            setLoading(false);
+          }
+        };
+    
+        fetchData();
+      }, [token]);
     
     return(
         <div>
-         {showLoader ? (
+         {loading ? (
                 // Loader component or message while loading
                 <Loader />
             ) : (
@@ -35,7 +52,7 @@ function Favoris(){
                         <div className="d-flex flex-column align-items-center justify-content-center" style={{minHeight: 300, color: 'white'}}>
                             <h1 className="font-weight-semi-bold text-uppercase mb-3">Liste de mes favoris</h1>
                             <div className="d-inline-flex">
-                                <p className="m-0"><a href>Home</a></p>
+                                <p className="m-0">Home</p>
                                 <p className="m-0 px-2">-</p>
                                 <p className="m-0">Mes Favoris</p>
                             </div>
@@ -44,7 +61,7 @@ function Favoris(){
                     {/* Page Header End */}
 
                     <div className="col-lg-10 col-md-10 mx-auto">
-                        <ListeAnnonces annonces = {annonces}  />
+                        <ListFavoris favoris = {data}  />
                     </div>
                     <Footer />
                     </>

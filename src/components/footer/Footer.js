@@ -17,7 +17,7 @@ function Footer(){
                 </div>
                 <div className="col-md-4 mb-5">
                     <h5 className="font-weight-bold text-dark mb-4">Envoyer nous votre message ici</h5>
-                    <form action>
+                    <form action = "">
                         <div className="form-group mb-3">
                             <input type="text" className="form-control border-0 py-4" placeholder="Your Name" required="required" />
                         </div>

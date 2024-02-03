@@ -2,7 +2,7 @@ import { Carousel } from "primereact/carousel";
 
 function MyCarroussel(props){
 
-    const {annonce} = props
+    const {imgArray} = props
     
     const productTemplate = (imgSrc) => (
       <img className="w-100 h-100" src={imgSrc} alt="Image" />
@@ -11,7 +11,7 @@ function MyCarroussel(props){
     return (
         
             <Carousel
-                value={annonce.voiture.img}
+                value={imgArray}
                 numVisible={1}
                 numScroll={1}
                 responsiveOptions={[

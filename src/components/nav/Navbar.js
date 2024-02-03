@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 function Navbar () {
 
+    const token = localStorage.getItem('token');
+
     return (
        <div>
             <div className="container-fluid bg-light p-0 mb-2">
@@ -39,7 +41,7 @@ function Navbar () {
                     </Link>
                 </div>
                 <div className="col-lg-4 col-xs-12 col-md-12 text-left">
-                    <form action>
+                    <form action="">
                         <div className="input-group">
                             <input type="text" className="form-control" placeholder="Search for cars..." />
                             <div className="input-group-append">
@@ -50,32 +52,44 @@ function Navbar () {
                         </div>
                     </form>
                 </div>
-                {/* <div className="col-lg-4 col-xs-12 d-flex flex-row">
-                    <a href className="nav-item nav-link">Login</a>
-                    <a href className="nav-item nav-link">Register</a>
-                </div> */}
-                <div className="col-lg-5 col-xs-12 d-flex flex-row">
-                <Link 
-                        to="/Messages" 
-                        className="nav-item nav-link"
-                    >
-                        Message
-                    </Link>
-                    <Link 
-                        to="/MesAnnonces" 
-                        className="nav-item nav-link"
-                    >
-                        Mes annonces
-                    </Link>
-                    <Link 
-                        to="/Favoris" 
-                        className="nav-item nav-link"
-                    >
-                        Mes favoris
-                    </Link>
-                    <a href className="nav-item nav-link"> Deconnexion </a>
-                </div>
-
+                {!token ? (
+                    <div className="col-lg-4 col-xs-12 d-flex flex-row">
+                        <Link 
+                            to="/Login" 
+                            className="nav-item nav-link"
+                        >
+                        Login
+                        </Link>
+                    
+                    </div>
+                ) : (
+                    <div className="col-lg-5 col-xs-12 d-flex flex-row">
+                        <Link 
+                            to="/Messages" 
+                            className="nav-item nav-link"
+                        >
+                            Message
+                        </Link>
+                        <Link 
+                            to="/MesAnnonces" 
+                            className="nav-item nav-link"
+                        >
+                            Mes annonces
+                        </Link>
+                        <Link 
+                            to="/Favoris" 
+                            className="nav-item nav-link"
+                        >
+                            Mes favoris
+                        </Link>
+                        <Link 
+                            to="/Login" 
+                            className="nav-item nav-link"
+                        >
+                            Deconnexion
+                        </Link>
+                    </div>
+                )}
             </div>
 
             {/* Navbar End */}

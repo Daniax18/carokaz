@@ -7,6 +7,8 @@ import { Route, Routes } from 'react-router-dom';
 import MesAnnonces from './views/annonces/MesAnnonces';
 import Favoris from './views/annonces/Favoris';
 import Message from './views/message/Message';
+import Login from './views/auth/Login';
+
 
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
       <Route path='/MesAnnonces' element={<MesAnnonces />} /> 
       <Route path='/Favoris' element={<Favoris />} /> 
       <Route path='/Messages' element={<Message />} /> 
+      <Route path='/Login' element={<Login />} /> 
     </Routes>
     </>
   )

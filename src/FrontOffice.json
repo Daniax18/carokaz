@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "b9f72b1f-e028-4900-8989-6f11bbe4661c",
+		"name": "FrontOffice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32151532"
+	},
+	"item": [
+		{
+			"name": "message",
+			"item": [
+				{
+					"name": "envoieMessage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUtilisateur1\": \"USR3\",\r\n    \"idUtilisateur2\": \"USR2\",\r\n    \"dateMessage\": \"2024-01-28T11:28:12.111\",\r\n    \"contenu\": \"Bonjour, votre véhicule m'interesse\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://carokaz.up.railway.app/messages",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dernierMessage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/inbox/USR2",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"inbox",
+								"USR2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "conversation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/messages/USR2/USR3",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"messages",
+								"USR2",
+								"USR3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favoris",
+			"item": [
+				{
+					"name": "ajoutFavoris",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"utilisateur\": {\r\n            \"idUtilisateur\": \"USR3\"\r\n        },\r\n        \"annonce\": {\r\n            \"idAnnonce\": \"ANN2\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://carokaz.up.railway.app/favoris",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"favoris"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listeFavoris",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/favoris/favoris/USR3",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"favoris",
+								"favoris",
+								"USR3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Annonces",
+			"item": [
+				{
+					"name": "listeAnnonce",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/annonces/valide",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"annonces",
+								"valide"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ficheAnnonce",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/annonces/front/ANN1",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"annonces",
+								"front",
+								"ANN1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "informationProprietaire",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/annonces/ANN1",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"annonces",
+								"ANN1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rechercheAvancee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/annonces/search?motCle=V&dateDebut=2024-01-15&dateFin=2024-01-31&prixMin=0&prixMax=2000000&idCategorie=3&idMarque=1&idModel=1&idBoite=1&idEnergie=1&idPlace=1&idPorte=2&idCouleur=4&idVille=3&idUtilisateur=USR2&kilometrageMin=80000&kilometrageMax=155000&consomationMin=6&consommationMax=8.51",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"annonces",
+								"search"
+							],
+							"query": [
+								{
+									"key": "motCle",
+									"value": "V"
+								},
+								{
+									"key": "dateDebut",
+									"value": "2024-01-15"
+								},
+								{
+									"key": "dateFin",
+									"value": "2024-01-31"
+								},
+								{
+									"key": "prixMin",
+									"value": "0"
+								},
+								{
+									"key": "prixMax",
+									"value": "2000000"
+								},
+								{
+									"key": "idCategorie",
+									"value": "3"
+								},
+								{
+									"key": "idMarque",
+									"value": "1"
+								},
+								{
+									"key": "idModel",
+									"value": "1"
+								},
+								{
+									"key": "idBoite",
+									"value": "1"
+								},
+								{
+									"key": "idEnergie",
+									"value": "1"
+								},
+								{
+									"key": "idPlace",
+									"value": "1"
+								},
+								{
+									"key": "idPorte",
+									"value": "2"
+								},
+								{
+									"key": "idCouleur",
+									"value": "4"
+								},
+								{
+									"key": "idVille",
+									"value": "3"
+								},
+								{
+									"key": "idUtilisateur",
+									"value": "USR2"
+								},
+								{
+									"key": "kilometrageMin",
+									"value": "80000"
+								},
+								{
+									"key": "kilometrageMax",
+									"value": "155000"
+								},
+								{
+									"key": "consomationMin",
+									"value": "6"
+								},
+								{
+									"key": "consommationMax",
+									"value": "8.51"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "historiqueAnnonce",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/annonces/utilisateur/USR2",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"annonces",
+								"utilisateur",
+								"USR2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
