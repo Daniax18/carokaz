@@ -58,7 +58,7 @@ function Navbar () {
                             to="/Login" 
                             className="nav-item nav-link"
                         >
-                        Login
+                        Se connecter
                         </Link>
                     
                     </div>
