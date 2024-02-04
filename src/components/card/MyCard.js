@@ -10,15 +10,15 @@ function MyCard(props){
                 <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                     
                     <img
-                        src={annonce.voiture.img[0]}
-                        alt={annonce.voiture.nomModele}
+                        src={annonce.photo ? annonce.photo[0].photo : ''}
+                        alt={annonce.voiture.modele.nomModele}
                         className="img-fluid w-100"
                     />                         
                 </div>
                 <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 className="text-truncate mb-3">{annonce.voiture.nomModele}</h6>
+                    <h6 className="text-truncate mb-3">{annonce.voiture.modele.nomModele}</h6>
                     <div className="d-flex justify-content-center">
-                        <h6>Ar {annonce.price}</h6>
+                        <h6>Ar {annonce.prix}</h6>
                     </div>
                     <div className="text-end text-sm text-muted mx-3">
                         {annonce.dateAnnonce}

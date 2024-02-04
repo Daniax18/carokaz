@@ -15,8 +15,7 @@ const Login = () => {
 
     const login = () => {
         const userData = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM'
-        
-        const userDataString = JSON.stringify(userData);
+
 
         localStorage.setItem('token', userData);
         window.location.href = "/";

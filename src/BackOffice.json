@@ -1,0 +1,2185 @@
+{
+	"info": {
+		"_postman_id": "5c94a1eb-946c-40c0-ba73-d73f32089633",
+		"name": "BackOffice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32151532"
+	},
+	"item": [
+		{
+			"name": "statistique",
+			"item": [
+				{
+					"name": "commissionByMois",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/commissions/commissionByMois",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"commissions",
+								"commissionByMois"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nbUtilisateur",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/statistiques/nbUtilisateurs",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"statistiques",
+								"nbUtilisateurs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nbAnnoncePubliee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/statistiques/nbPubliees",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"statistiques",
+								"nbPubliees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nbVoitureVendue",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/statistiques/nbVendues",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"statistiques",
+								"nbVendues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "annonceByMarque",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/statistiques/annonceByMarque",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"statistiques",
+								"annonceByMarque"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "venduByMarque",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/statistiques/venduByMarque",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"statistiques",
+								"venduByMarque"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GestionElement",
+			"item": [
+				{
+					"name": "categorie",
+					"item": [
+						{
+							"name": "listeCategories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/categories",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "categorieById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/categories/1",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insertCategorie",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomCategorie\":\"Luxe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/categories",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCategorie",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/categories/4",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"categories",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCategorie",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomCategorie\":\"Mini-citadine\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/categories/9",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"categories",
+										"9"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "marque",
+					"item": [
+						{
+							"name": "listeMarques",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/marques",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"marques"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "marqueById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/marques/1",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"marques",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insertMarque",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomMarque\":\"Toyota\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/marques",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"marques"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteMarque",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/marques/7",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"marques",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateMarque",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomMarque\":\"Peugeot\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/marques/7",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"marques",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "modele",
+					"item": [
+						{
+							"name": "listeModeles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/modeles",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"modeles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modeleById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/modeles/1",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"modeles",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insertModele",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomModele\":\"A3\",\r\n    \"marque\":{\r\n        \"idMarque\":3\r\n    },\r\n    \"categorie\":\r\n    {\r\n        \"idCategorie\":1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/modeles",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"modeles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteModele",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/modeles/7",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"modeles",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateModele",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomModele\":\"A3\",\r\n    \"marque\":{\r\n        \"idMarque\":3\r\n    },\r\n    \"categorie\":\r\n    {\r\n        \"idCategorie\":2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/modeles/8",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"modeles",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modeleByCategorieByMarque",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/modeles/modeleCategorieMarque/2/1",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"modeles",
+										"modeleCategorieMarque",
+										"2",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "energie",
+					"item": [
+						{
+							"name": "listeEnergies",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/energies",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"energies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "energieById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/energies/1",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"energies",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insertEnergie",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomEnergie\":\"Solaire\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/energies",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"energies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteEnergie",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/energies/6",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"energies",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateEnergie",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomEnergie\":\"Petrol\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/energies/3",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"energies",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ville",
+					"item": [
+						{
+							"name": "listeVille",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/villes",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"villes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "villeById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/villes/1",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"villes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insertVille",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomVille\":\"Fianarantsoa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/villes",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"villes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteVille",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/villes/6",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"villes",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateVille",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomVille\":\"Mahajanga\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/villes/3",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"villes",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "couleur",
+					"item": [
+						{
+							"name": "listeCouleurs",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/couleurs",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"couleurs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "couleurById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/couleurs/1",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"couleurs",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insertCouleur",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomCouleur\":\"Gris\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/couleurs",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"couleurs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCouleur",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/couleurs/6",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"couleurs",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCouleur",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomCouleur\":\"Rose\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/couleurs/4",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"couleurs",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "boite",
+					"item": [
+						{
+							"name": "listeBoite",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/boites",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"boites"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "boiteById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/boites/1",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"boites",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insertBoite",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomBoite\":\"Automatique et sequentielle\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/boites",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"boites"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteBoite",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/boites/4",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"boites",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateBoite",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nomBoite\":\"Automatique\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/boites/2",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"boites",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "porte",
+					"item": [
+						{
+							"name": "listePortes",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/portes",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"portes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "porteById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/portes/1",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"portes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insertPorte",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"valeur\":3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/portes",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"portes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deletePorte",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/portes/6",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"portes",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePorte",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"valeur\":6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/portes/4",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"portes",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "place",
+					"item": [
+						{
+							"name": "listePlace",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/places",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"places"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placeById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/places/1",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"places",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insertPlace",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"valeur\":27\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/places",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"places"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deletePlace",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/places/5",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"places",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePlace",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"valeur\":32\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://carokaz.up.railway.app/places/6",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"places",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "suggestionPlace",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://carokaz.up.railway.app/places/suggestion?insere=2",
+									"protocol": "https",
+									"host": [
+										"carokaz",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"places",
+										"suggestion"
+									],
+									"query": [
+										{
+											"key": "insere",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "validationAnnonce",
+			"item": [
+				{
+					"name": "listeAnnonces",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/annonces",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"annonces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "annonceById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/annonces/ANN1",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"annonces",
+								"ANN1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validationAnnonce",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/annonces/valider/ANN3",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"annonces",
+								"valider",
+								"ANN3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refuserAnnonce",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/annonces/refuser/ANN3",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"annonces",
+								"refuser",
+								"ANN3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Commission",
+			"item": [
+				{
+					"name": "valeurCommission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://carokaz.up.railway.app/pourcentage",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"pourcentage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "majCommission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valeur\":6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://carokaz.up.railway.app/pourcentage",
+							"protocol": "https",
+							"host": [
+								"carokaz",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"pourcentage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jean@gmail.com\",\r\n    \"password\": \"jean\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://carokaz.up.railway.app/auth/signin",
+					"protocol": "https",
+					"host": [
+						"carokaz",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listeUtilisateurs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFuQGdtYWlsLmNvbSIsImlhdCI6MTcwNjQyOTE2OSwiZXhwIjoxNzA5MDIxMTY5fQ.GxvVooqHp2HzPjfJv0pmuBt552NJGuINCBV7wIcvEUM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://carokaz.up.railway.app/utilisateurs",
+					"protocol": "https",
+					"host": [
+						"carokaz",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"utilisateurs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,32 +1,64 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/nav/Navbar';
-import messageData from './messageData'
 import Footer from '../../components/footer/Footer';
 import Loader from '../../components/loader/Loader';
 import Inbox from '../../components/message/Inbox';
 import Dialogue from '../../components/message/Dialogue';
 import './message.css';
+import { getMyInbox } from './utilMessage';
+import { useParams } from 'react-router-dom';
 
 function Message(){
+    const [idOther, setIdOther] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [inboxes, setInboxes]=useState([]);
+    const token = localStorage.getItem('token');
+    const user = {
+        idUtilisateur : 'USR2'
+    }
 
-    const { inboxes } = messageData;
-    console.log(inboxes)
+    const handleInboxMessageClick = (clickedId) => {
+        // Update the idOther state when a message is clicked
+        setIdOther(clickedId);
+      };
     
-    const [showLoader, setShowLoader] = useState(true);
+
     useEffect(() => {
-        const loaderTimeout = setTimeout(() => {
-            setShowLoader(false);
-        }, 1000);
-
-        // EN ATTENTE DATA ETO
-        return () => clearTimeout(loaderTimeout);
-        }, []
-    );
-
+        const fetchData = async () => {
+          try {
+            // const user = await connected(token)
+   
+            setLoading(true);
+            let url = process.env.REACT_APP_API_URL + 'inbox/' + user.idUtilisateur;
+            let response = await fetch(url, {
+              method: 'GET',
+              headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+              },
+            });
     
+            if (response.ok) {
+              let data = await response.json();
+              setInboxes(await getMyInbox(user.idUtilisateur, data.data, token))
+              
+            } else {
+              console.error('Erreur de la requête:', response);
+            }
+          } catch (error) {
+            console.error('Erreur lors de la récupération des données:', error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        fetchData();
+      }, [token]);
+
+      console.log('Other id is ' + idOther)
+   
     return(
         <div>
-         {showLoader ? (
+         {loading ? (
                 // Loader component or message while loading
                 <Loader />
             ) : (
@@ -37,7 +69,7 @@ function Message(){
                         <div className="d-flex flex-column align-items-center justify-content-center" style={{minHeight: 300, color: 'white'}}>
                             <h1 className="font-weight-semi-bold text-uppercase mb-3">Messagerie</h1>
                             <div className="d-inline-flex">
-                                <p className="m-0"><a href>Home</a></p>
+                                <p className="m-0">Home</p>
                                 <p className="m-0 px-2">-</p>
                                 <p className="m-0">Boite de reception</p>
                             </div>
@@ -48,10 +80,10 @@ function Message(){
                     <div className="row mb-5 col-10 mx-auto">
 
                         <div className="col-lg-5 col-xl-3 border-right">
-                            <Inbox messages = {inboxes}  />
+                            <Inbox messages = {inboxes} onMessageClick={handleInboxMessageClick}  />
                         </div>
                         <div className="col-lg-7 col-xl-9">
-                            <Dialogue />
+                            <Dialogue userMainId = {user.idUtilisateur} idOther = {idOther} inboxes = {inboxes} />
                         </div>
 
                     </div>

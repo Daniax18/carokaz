@@ -1,23 +1,30 @@
 import React from 'react';
 
 function Inbox(props){
-    const{messages} = props
+    const{messages, onMessageClick} = props
 
+    const handleClick = (id) => {
+        console.log('Clicked message:', id);
+        // Pass the clicked message ID to the parent component
+        onMessageClick(id);
+    };
     return(
         <>
-            <div className="px-4 d-none d-md-block">
+            <div className="px-4 d-none d-md-block mb-2">
                 <div className="d-flex align-items-center">
-                    <div className="flex-grow-1">
-                        <input type="text" className="form-control my-3" placeholder="Search..." />
-                    </div>
+                  <h5 className='text-muted'> Votre inbox : </h5>
                 </div>
             </div>
 
             {messages.map(message => (
-                <div className="d-flex flex-row justify-content-between p-2 border-bottom mb-2" key={message.id}>
+                <div 
+                    className="d-flex flex-row justify-content-between p-2 border-bottom mb-2" 
+                    key={message.username}
+                    onClick={() => handleClick(message.otherId)}
+                >
                     <div className="d-flex justify-content-center" style={{width: '30%'}}>
                         <img 
-                            src="https://bootdey.com/img/Content/avatar/avatar5.png" 
+                            src="/img/pdp.png" 
                             className="rounded-circle" 
                             alt="Vanessa Tucker" 
                             width={40} 
@@ -26,7 +33,7 @@ function Inbox(props){
                     <div className="flex-grow-1">
                         <strong> {message.username} </strong>
                         <div className="small text-muted">
-                            {message.last}
+                            {message.sender + message.lastMessage}
                         </div>
                     </div>
                 </div>

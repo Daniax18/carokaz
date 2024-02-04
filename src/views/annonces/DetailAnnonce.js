@@ -33,7 +33,7 @@ function DetailAnnonce(){
             xhttp.open( "GET" , url, true );
             xhttp.send(null);
         }, 1000); // Simulating a 1-second delay
-    }, []); // Empty dependency array to run the effect only once on component mount
+    }, []); 
 
 
 
