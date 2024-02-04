@@ -220,3 +220,10 @@
         width: 40px;
     }
 }
+.toast-container {
+    position: fixed;
+    text-align: center;
+    margin: 35px;
+    z-index: 1000;
+  }
+  

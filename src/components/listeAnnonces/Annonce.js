@@ -9,6 +9,27 @@ function Annonce(props){
     annonce.photo.forEach(temp => {      
         img.push(temp.photo);
       });
+
+    const token = localStorage.getItem('token');
+
+    const message = async () => {
+        if(!token)
+        {
+            window.location.href = '/Login';
+        }
+        else{
+            window.location.href = '/Messages';
+        }
+    }
+    const appel = async () => {
+        if(!token)
+        {
+            window.location.href = '/Login';
+        }
+        else{
+            window.location.href = '/Appel';
+        }
+    }
     //   console.log(img)
     return(
         <div className="container-fluid py-5">
@@ -56,7 +77,7 @@ function Annonce(props){
                             </tr>
                             <tr>
                                 <td> Porte </td>
-                                <td> {annonce.voiture.energie.nomPorte} </td>
+                                <td> {annonce.voiture.porte.nomPorte} </td>
                             </tr>
                             <tr>
                                 <td> Consommation </td>
@@ -70,10 +91,10 @@ function Annonce(props){
                     </table>
 
                     <div className="d-flex flex-row justify-content-end mt-2 mb-2">
-                            <button className='btn btn-primary'>
+                            <button className='btn btn-primary' onClick={message}>
                                 Envoyer un message
                             </button>
-                            <button className='btn btn-outline-primary mx-5'>
+                            <button className='btn btn-outline-primary mx-5' onClick={appel}>
                                 Appeler le vendeur
                             </button>
                         </div> 

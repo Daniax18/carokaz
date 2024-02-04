@@ -8,6 +8,11 @@ function Navbar () {
 
     const token = localStorage.getItem('token');
 
+    const handleLogout = () => {
+        localStorage.clear();
+    
+        window.location.href = '/';
+      };
     return (
        <div>
             <div className="container-fluid bg-light p-0 mb-2">
@@ -83,8 +88,9 @@ function Navbar () {
                             Mes favoris
                         </Link>
                         <Link 
-                            to="/Login" 
+                            to="#" 
                             className="nav-item nav-link"
+                            onClick={handleLogout}
                         >
                             Deconnexion
                         </Link>
