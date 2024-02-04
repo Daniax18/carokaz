@@ -1,9 +1,133 @@
-import React from 'react';
+import React,{useEffect , useState} from 'react';
 import { Link } from 'react-router-dom';
 
-function Card(props){
+function Card(props) {
+    const { annonce } = props;
+    const token = localStorage.getItem('token');
+    const [user, setUser] = useState([]);
+    const [fav, setFav] = useState(false);
+    const [idFav, setIdFav] = useState("");
 
-    const {annonce} = props
+    const ajoutFavoris = async () => {
+        try {
+            const url = process.env.REACT_APP_API_URL + "favoris";
+            const details = {
+            utilisateur: {
+                idUtilisateur: user.idUtilisateur
+            },
+            annonce: {
+                idAnnonce: annonce.idAnnonce
+            }
+          };
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
+            },
+            body: JSON.stringify(details),
+        });
+        console.log(JSON.stringify(details))
+          if (response.ok) {
+            const data = await response.json();
+          } else {
+            console.error('Erreur lors de la requête :', response.status);
+          }
+        } catch (error) {
+          console.error('Erreur inattendue :', error);
+        }
+      }
+
+      const deleteFavoris = async () => {
+        try {
+            const url = process.env.REACT_APP_API_URL + "favoris/" + idFav;
+            const response = await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setFav(false);
+            } else {
+                console.error('Erreur lors de la requête :', response.status);
+            }
+        } catch (error) {
+            console.error('Erreur inattendue :', error);
+        }
+    };
+
+      const checkFavoris = async () => {
+        try {
+          const url = process.env.REACT_APP_API_URL + "favoris/favoris/"+user.idUtilisateur;
+    
+          const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
+            },
+          });
+    
+          if (response.ok) {
+            const data = await response.json();
+            console.log(data.data);
+            data.data.forEach(item => {
+                console.log(item.annonce.idAnnonce+" "+annonce.idAnnonce)
+                if (item.annonce.idAnnonce === annonce.idAnnonce) {
+                    console.log("huhu");
+                    setFav(true);
+                    setIdFav(item.idFavoris);
+                }
+            });
+            
+          } else {
+            console.error('Erreur lors de la requête :', response.status);
+          }
+        } catch (error) {
+          console.error('Erreur inattendue :', error);
+        }
+      };
+
+
+      const connected = async () => {
+        try {
+          const url = process.env.REACT_APP_API_URL + "utilisateurs/connecte";
+    
+          const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
+            },
+          });
+    
+          if (response.ok) {
+            const data = await response.json();
+            setUser(data.data);
+            checkFavoris();
+            
+          } else {
+            console.error('Erreur lors de la requête :', response.status);
+          }
+        } catch (error) {
+          console.error('Erreur inattendue :', error);
+        }
+      };
+
+      useEffect(() => {
+        const fetchData = async () => {
+            await connected();
+            console.log("user : " + JSON.stringify(user));
+        };
+
+        fetchData();
+    }, [user]);
+    
+
     return(
         <div className="col-lg-4 col-md-6 col-sm-12 shadow mb-4" style={{padding: '2% 2% 2% 2%'}}>
             <div className="card product-item border-0 mb-4">
@@ -30,8 +154,11 @@ function Card(props){
                         Voir detail
                     </Link>
                     <div className="btn btn-sm text-dark p-0">
-                        <i className="far fa-heart text-primary mr-1"></i>
-                        {/* <i className="fas fa-heart text-primary mr-1"></i> */}
+                        {fav ? (
+                            <i className="fas fa-heart text-primary mr-1" onClick={deleteFavoris}></i>
+                        ) : (
+                            <i className="far fa-heart text-primary mr-1" onClick={ajoutFavoris}></i>
+                        )}
                     </div>
                 </div>
             </div>
