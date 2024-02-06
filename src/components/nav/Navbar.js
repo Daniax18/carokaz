@@ -65,7 +65,7 @@ function Navbar () {
                 ) : (
                     <div className="col-lg-5 col-xs-12 d-flex flex-row">
                         <Link 
-                            to="/Messages" 
+                            to={`/Messages/${null}`}
                             className="nav-item nav-link"
                         >
                             Message

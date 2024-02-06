@@ -20,7 +20,7 @@ function App() {
       <Route path='/DetailAnnonce/:id_annonce' element={<DetailAnnonce />} /> 
       <Route path='/MesAnnonces' element={<MesAnnonces />} /> 
       <Route path='/Favoris' element={<Favoris />} /> 
-      <Route path='/Messages' element={<Message />} /> 
+      <Route path='/Messages/:idUtilisateur' element={<Message />} /> 
       <Route path='/Login' element={<Login />} /> 
     </Routes>
     </>

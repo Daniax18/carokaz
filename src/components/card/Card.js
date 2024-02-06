@@ -10,7 +10,7 @@ function Card(props){
                 <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                     
                     <img
-                        src={annonce.photo ? annonce.photo[0].photo : ''}
+                        src={annonce.photo && annonce.photo.length > 0 ? annonce.photo[0].photo : ''}
                         alt={annonce.voiture.modele.nomModele}
                         className="img-fluid w-100"
                     />                         

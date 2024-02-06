@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MyCarroussel from './MyCarroussel';
+import { Dialog } from 'primereact/dialog';
+import { Link } from 'react-router-dom';
 
 
 function Annonce(props){
@@ -9,7 +11,10 @@ function Annonce(props){
     annonce.photo.forEach(temp => {      
         img.push(temp.photo);
       });
-    //   console.log(img)
+
+    const token = localStorage.getItem('token');
+    //   console.log(annonce)
+    const [visible, setVisible] = useState(false);
     return(
         <div className="container-fluid py-5">
             <div className="row px-xl-5">
@@ -69,14 +74,63 @@ function Annonce(props){
                         </tbody>
                     </table>
 
-                    <div className="d-flex flex-row justify-content-end mt-2 mb-2">
+                    {token ? <div className="d-flex flex-row justify-content-end mt-2 mb-2">
+                        <Link
+                            to={`/Messages/${annonce.utilisateur.idUtilisateur}`}
+                        >
                             <button className='btn btn-primary'>
                                 Envoyer un message
                             </button>
-                            <button className='btn btn-outline-primary mx-5'>
-                                Appeler le vendeur
+                        </Link>
+                        
+                        <button 
+                            label="Show" 
+                            className='btn btn-outline-primary ml-2' 
+                            onClick={() => setVisible(true)}> 
+                            Voir vendeur 
+                        </button>
+                        <Dialog 
+                            visible={visible} 
+                            style={{ width: '50vw', backgroundColor : 'white' }} 
+                            className='p-3 shadow-lg rounded'
+                            onHide={() => setVisible(false)} 
+                        >
+                            <div>
+                                <h1 className='text-center'> Detail du vendeur </h1>
+                            </div>
+                            <table className="table table-stripped">
+                                <thead>
+                                    <tr>
+                                        <th> Detail </th>
+                                        <th> Information </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> Vendeur </td>
+                                        <td> {annonce.utilisateur.prenom + ' ' + annonce.utilisateur.nom} </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Email </td>
+                                        <td> {annonce.utilisateur.username} </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Contact </td>
+                                        <td>  {annonce.utilisateur.contact} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </Dialog>
+                    </div> :  
+                    
+                        <Link
+                            to={`/Login`}
+                        >
+                            <button className='btn btn-primary'>
+                                Se connecter pour voir vendeur
                             </button>
-                        </div> 
+                        </Link>
+                    }
                 </div>
             </div>
         </div>

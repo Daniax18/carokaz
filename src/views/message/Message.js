@@ -5,16 +5,18 @@ import Loader from '../../components/loader/Loader';
 import Inbox from '../../components/message/Inbox';
 import Dialogue from '../../components/message/Dialogue';
 import './message.css';
-import { getMyInbox } from './utilMessage';
 import { useParams } from 'react-router-dom';
+import { getMyInbox } from './utilMessage';
 
 function Message(){
-    const [idOther, setIdOther] = useState(null);
+    const { idUtilisateur } = useParams();
+    const [idOther, setIdOther] = useState(idUtilisateur);
+    // console.log('otehr here is ' + idOther)
     const [loading, setLoading] = useState(true);
     const [inboxes, setInboxes]=useState([]);
     const token = localStorage.getItem('token');
     const user = {
-        idUtilisateur : 'USR2'
+        idUtilisateur : 'USR1'
     }
 
     const handleInboxMessageClick = (clickedId) => {
@@ -24,37 +26,37 @@ function Message(){
     
 
     useEffect(() => {
-        const fetchData = async () => {
-          try {
-            // const user = await connected(token)
-   
-            setLoading(true);
-            let url = process.env.REACT_APP_API_URL + 'inbox/' + user.idUtilisateur;
-            let response = await fetch(url, {
-              method: 'GET',
-              headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json',
-              },
-            });
-    
-            if (response.ok) {
-              let data = await response.json();
-              setInboxes(await getMyInbox(user.idUtilisateur, data.data, token))
-              
-            } else {
-              console.error('Erreur de la requête:', response);
-            }
-          } catch (error) {
-            console.error('Erreur lors de la récupération des données:', error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        fetchData();
-      }, [token]);
+      const fetchData = async () => {
+        try {
+          // const user = await connected(token)
+  
+          setLoading(true);
+          let url = process.env.REACT_APP_API_URL + 'inbox/' + user.idUtilisateur;
+          let response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Content-Type': 'application/json',
+            },
+          });
+  
+          if (response.ok) {
+            let data = await response.json();
+            setInboxes(await getMyInbox(user.idUtilisateur, data.data, token))
 
-      console.log('Other id is ' + idOther)
+          } else {
+            console.error('Erreur de la requête:', response);
+          }
+        } catch (error) {
+          console.error('Erreur lors de la récupération des données:', error);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchData();
+  }, [token]);
+
+      // console.log('Other id is ' + idOther)
    
     return(
         <div>
@@ -83,7 +85,7 @@ function Message(){
                             <Inbox messages = {inboxes} onMessageClick={handleInboxMessageClick}  />
                         </div>
                         <div className="col-lg-7 col-xl-9">
-                            <Dialogue userMainId = {user.idUtilisateur} idOther = {idOther} inboxes = {inboxes} />
+                            <Dialogue idUtilisateur1 = {user.idUtilisateur} idUtilisateur2 = {idOther} inboxes = {inboxes} />
                         </div>
 
                     </div>

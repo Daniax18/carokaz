@@ -9,12 +9,15 @@ function Favoris(){
     const [loading, setLoading] = useState(true);
     const [data, setData]=useState([]);
     const token = localStorage.getItem('token');
+    const user = {
+      idUtilisateur : 'USR1'
+  }
 
     useEffect(() => {
         const fetchData = async () => {
           try {
             setLoading(true);
-            let url = process.env.REACT_APP_API_URL + 'favoris/favoris/USR3';
+            let url = process.env.REACT_APP_API_URL + 'favoris/favoris/' + user;
             let response = await fetch(url, {
               method: 'GET',
               headers: {
