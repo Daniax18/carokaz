@@ -15,7 +15,7 @@ function Filter(props){
                             type="checkbox"
                             defaultChecked={false}
                             id={`checkbox-${index}`}
-                            onChange={() => handleCheckboxChange(item[nameId])} // Assuming you have a function handleCheckboxChange to handle the checkbox change
+                            onChange={() => handleCheckboxChange(item[nameId])} 
                         />
                     </div>
                     ))}

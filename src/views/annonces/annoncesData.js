@@ -122,7 +122,11 @@ const categories = [
   {
       id : 2 ,
       nom : 'Citadine'
-  }
+  },
+  {
+    id : 3 ,
+    nom : 'Test'
+}
 ]
 
 const modeles = [

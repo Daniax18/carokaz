@@ -1,38 +1,109 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/nav/Navbar';
-import annoncesData from './annoncesData'
+// import annoncesData from './annoncesData'
 import Filter from '../../components/forms/filter/Filter';
 import ListeAnnonces from '../../components/listeAnnonces/ListeAnnonces';
 import Footer from '../../components/footer/Footer';
 import Loader from '../../components/loader/Loader';
+import TwoInput from '../../components/forms/TwoInput';
+import { getBoites, getCategories, getCouleurs, getEnergies, getMarques } from '../../my_util';
 
 
 
 function Annonces(){
 
-    const {marques, boites, categories, modeles, energie, couleurs } = annoncesData;
+    // let {boites, categories, modeles, energie, couleurs } = annoncesData;
 
     const [loading, setLoading] = useState(true);
     const [data, setData]=useState([]);
     const [idMarque, setIdMarque] = useState('');
     const [idCategorie, setIdCategorie] = useState('');
+    const [idEnergie, setIdEnergie] = useState('');
+    const [idBoite, setIdBoite] = useState('');
+    const [idCouleur, setIdCouleur] = useState('');
+    const [min, setMinimum] = useState('0');
+    const [max, setMaximum] = useState('2000000');
+    const [minPrice, setMinimumPrix] = useState('0');
+    const [maxPrice, setMaximumPrix] = useState('200000000');
+    const [minConsommation, setMinimumConso] = useState('0');
+    const [maxConsommation, setMaximumConso] = useState('50');
+    const [marques, setMarques] = useState([]);
+    const [boites, setBoites] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [energies, setEnergies] = useState([]);
+    const [couleurs, setCouleurs] = useState([]);
+
+    const handleMinimumConsoChange = (value) => {
+        setMinimumConso(value);
+    };
+
+    const handleMaximumConsoChange = (value) => {
+        setMaximumConso(value);
+    };
+
+    const handleMinimumPrixChange = (value) => {
+        setMinimumPrix(value);
+    };
+
+    const handleMaximumPrixChange = (value) => {
+        setMaximumPrix(value);
+    };
+
+    const handleMinimumChange = (value) => {
+        setMinimum(value);
+    };
+
+    const handleMaximumChange = (value) => {
+        setMaximum(value);
+    };
 
     const handleCheckboxMarque = (id) => {
         setIdMarque(id === idMarque ? '' : id);
     };
 
     const handleCheckboxCategorie = (id) => {
-        console.log('cate is ' + id)
         setIdCategorie(id === idCategorie ? '' : id);
       };
 
+    const handleCheckboxEnegie = (id) => {
+        setIdEnergie(id === idEnergie ? '' : id);
+    }
+
+    const handleCheckboxBoite = (id) => {
+        setIdBoite(id === idBoite ? '' : id);
+    }
+
+    const handleCheckboxCouleur = (id) => {
+        setIdCouleur(id === idCouleur ? '' : id);
+    }
 
     useEffect(() => {
         // Simulating an asynchronous data fetch
         setLoading(false);
-        setTimeout(() => {
+        setTimeout(async () => {
+
+            const [
+                marquesData,
+                boitesData,
+                categoriesData,
+                energiesData,
+                couleursData
+            ] = await Promise.all([
+                getMarques(),
+                getBoites(),
+                getCategories(),
+                getEnergies(),
+                getCouleurs()
+            ]);
+            console.log(categoriesData)
+            setMarques(marquesData);
+            setBoites(boitesData);
+            setCategories(categoriesData);
+            setEnergies(energiesData);
+            setCouleurs(couleursData);
+
             let url = process.env.REACT_APP_API_URL + 'annonces/valide';
-            let url1 =  process.env.REACT_APP_API_URL + 'annonces/search?motCle=&prixMin=0&prixMax=20000000&idCategorie='+ idCategorie +'&idMarque='+ idMarque +'&idModel=&idBoite=&idEnergie=&idPlace=&idPorte=&idCouleur=&idVille=&kilometrageMin=0&kilometrageMax=15500000&consomationMin=6&consommationMax=20'
+            let url1 =  process.env.REACT_APP_API_URL + 'annonces/search?motCle=&prixMin='+ minPrice +'&prixMax='+ maxPrice +'&idCategorie='+ idCategorie +'&idMarque='+ idMarque +'&idModel=&idBoite='+ idBoite +'&idEnergie='+ idEnergie +'&idCouleur=&kilometrageMin='+ min +'&kilometrageMax='+ max +'&consomationMin='+ minConsommation +'&consommationMax='+ maxConsommation +''
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function(){
               if( this.readyState === 4 ){
@@ -51,7 +122,7 @@ function Annonces(){
             xhttp.open( "GET" , url1, true );
             xhttp.send(null);
         }, 500); // Simulating a 1-second delay
-    }, [idMarque, idCategorie]);
+    }, [idMarque, idCategorie, idEnergie, minPrice, maxPrice, idBoite, min, max, minConsommation, maxConsommation]);
     
 
    
@@ -80,12 +151,35 @@ function Annonces(){
                     <div className="container-fluid pt-5">
                         <div className="row px-xl-5">
                             <div className="col-lg-3 col-md-12">
-                                <Filter title = "Categories" data = {categories} handleCheckboxChange={handleCheckboxCategorie} nameId = 'id' value = 'nom' />
-                                <Filter title = "Marques" data = {marques} handleCheckboxChange={handleCheckboxMarque} nameId = 'id' value = 'nom' />
-                                <Filter title = "Modeles" data = {modeles} value = 'nom' />
-                                <Filter title = "Energie" data = {energie} value = 'nom' />
-                                <Filter title = "Boites" data = {boites} value = 'nom' />
-                                <Filter title = "Couleur" data = {couleurs} value = 'nom' />
+                                <Filter title = "Categories" data = {categories} handleCheckboxChange={handleCheckboxCategorie} nameId = 'idCategorie' value = 'nomCategorie' />
+                                <Filter title = "Marques" data = {marques} handleCheckboxChange={handleCheckboxMarque} nameId = 'idMarque' value = 'nomMarque' />
+                                {/* <Filter title = "Modeles" data = {modeles}  nameId = 'id' value = 'nom' /> */}
+                                <Filter title = "Energies" data = {energies} handleCheckboxChange={handleCheckboxEnegie} nameId = 'idEnergie' value = 'nomEnergie' />
+                                <Filter title = "Boites" data = {boites} handleCheckboxChange={handleCheckboxBoite} nameId = 'idBoite' value = 'nomBoite' />
+                                <Filter title = "Couleur" data = {couleurs} handleCheckboxChange={handleCheckboxCouleur} nameId = 'idCouleur' value = 'nomCouleur' />
+                                <TwoInput 
+                                    title = "Prix entre" 
+                                    minimum = {minPrice} 
+                                    maximum = {maxPrice} 
+                                    handleMinimumChange={handleMinimumPrixChange}
+                                    handleMaximumChange={handleMaximumPrixChange}
+                                />
+                                <TwoInput 
+                                    title = "Kilometrage" 
+                                    minimum = {min} 
+                                    maximum = {max} 
+                                    handleMinimumChange={handleMinimumChange}
+                                    handleMaximumChange={handleMaximumChange}
+                                />
+
+                                <TwoInput 
+                                    title = "Consommation" 
+                                    minimum = {minConsommation} 
+                                    maximum = {maxConsommation} 
+                                    handleMinimumChange={handleMinimumConsoChange}
+                                    handleMaximumChange={handleMaximumConsoChange}
+                                />
+
                             </div>
                             <div className="col-lg-9 col-md-12">
                                 {/* <ListeAnnonces annonces = {annonces}  /> */}
