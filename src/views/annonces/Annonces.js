@@ -32,6 +32,11 @@ function Annonces(){
     const [categories, setCategories] = useState([]);
     const [energies, setEnergies] = useState([]);
     const [couleurs, setCouleurs] = useState([]);
+    const [keyWord, setKeyWord] = useState('');
+
+    const handleInputChange = (e) => {
+        setKeyWord(e.target.value);
+    };
 
     const handleMinimumConsoChange = (value) => {
         setMinimumConso(value);
@@ -79,7 +84,7 @@ function Annonces(){
 
     useEffect(() => {
         // Simulating an asynchronous data fetch
-        setLoading(false);
+        setLoading(true);
         setTimeout(async () => {
 
             const [
@@ -103,7 +108,7 @@ function Annonces(){
             setCouleurs(couleursData);
 
             let url = process.env.REACT_APP_API_URL + 'annonces/valide';
-            let url1 =  process.env.REACT_APP_API_URL + 'annonces/search?motCle=&prixMin='+ minPrice +'&prixMax='+ maxPrice +'&idCategorie='+ idCategorie +'&idMarque='+ idMarque +'&idModel=&idBoite='+ idBoite +'&idEnergie='+ idEnergie +'&idCouleur=&kilometrageMin='+ min +'&kilometrageMax='+ max +'&consomationMin='+ minConsommation +'&consommationMax='+ maxConsommation +''
+            let url1 =  process.env.REACT_APP_API_URL + 'annonces/search?motCle='+ keyWord +'&prixMin='+ minPrice +'&prixMax='+ maxPrice +'&idCategorie='+ idCategorie +'&idMarque='+ idMarque +'&idModel=&idBoite='+ idBoite +'&idEnergie='+ idEnergie +'&idCouleur=&kilometrageMin='+ min +'&kilometrageMax='+ max +'&consomationMin='+ minConsommation +'&consommationMax='+ maxConsommation +''
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function(){
               if( this.readyState === 4 ){
@@ -122,17 +127,14 @@ function Annonces(){
             xhttp.open( "GET" , url1, true );
             xhttp.send(null);
         }, 500); // Simulating a 1-second delay
-    }, [idMarque, idCategorie, idEnergie, minPrice, maxPrice, idBoite, min, max, minConsommation, maxConsommation]);
+    }, [idMarque, idCategorie, idEnergie, minPrice, maxPrice, idBoite, min, max, minConsommation, maxConsommation, keyWord]);
     
 
    
 
     return(
         <div>
-         {loading ? (
-                // Loader component or message while loading
-                <Loader />
-            ) : (
+        
                 <>
                     <Navbar />
                     {/* Page Header Start */}
@@ -147,6 +149,22 @@ function Annonces(){
                         </div>
                     </div>
                     {/* Page Header End */}
+                    <div className="col-lg-8 col-xs-12 col-md-12 text-center mx-auto">
+                        <div className="input-group">
+                        <input 
+                            type="text" 
+                            className="form-control" 
+                            placeholder="Cherchez votre voiture par mots cles ... "
+                            value={keyWord}
+                            onChange={handleInputChange} // Add this line
+                        />
+                            <div className="input-group-append">
+                                <span className="btn btn-outline bg-transparent text-primary">
+                                    <i className="fa fa-search" />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
 
                     <div className="container-fluid pt-5">
                         <div className="row px-xl-5">
@@ -181,15 +199,22 @@ function Annonces(){
                                 />
 
                             </div>
-                            <div className="col-lg-9 col-md-12">
-                                {/* <ListeAnnonces annonces = {annonces}  /> */}
-                                {data ? <ListeAnnonces annonces = {data}  /> : '' } 
+                            <div className="col-lg-9 col-md-12 shadow p-5">
+                                {loading ? (
+                    // Loader component or message while loading
+                                    <Loader />
+                                        ) : (
+                                            
+                                            <>
+                                            {data ? <ListeAnnonces annonces = {data}  /> : '' } </>
+                                        )
+                                }
                             </div>
                         </div>
                     </div>
                     <Footer />
                     </>
-            )}
+           
         </div>
         
     )

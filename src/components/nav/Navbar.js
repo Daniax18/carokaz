@@ -40,18 +40,7 @@ function Navbar () {
                         </h1>
                     </Link>
                 </div>
-                <div className="col-lg-4 col-xs-12 col-md-12 text-left">
-                    <form action="">
-                        <div className="input-group">
-                            <input type="text" className="form-control" placeholder="Search for cars..." />
-                            <div className="input-group-append">
-                                <span className="btn btn-outline bg-transparent text-primary">
-                                    <i className="fa fa-search" />
-                                </span>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+               
                 {!token ? (
                     <div className="col-lg-4 col-xs-12 d-flex flex-row">
                         <Link 
