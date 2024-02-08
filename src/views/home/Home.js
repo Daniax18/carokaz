@@ -12,7 +12,7 @@ const Home = () => {
     useEffect(() => {
         const loaderTimeout = setTimeout(() => {
             setShowLoader(false);
-        }, 1000);
+        }, 500);
 
         // EN ATTENTE DATA ETO
         return () => clearTimeout(loaderTimeout);

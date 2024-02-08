@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/nav/Navbar';
-import annoncesData from './annoncesData'
 import ListeAnnonces from '../../components/listeAnnonces/ListeAnnonces';
 import Footer from '../../components/footer/Footer';
 import Loader from '../../components/loader/Loader';
+import { connected } from '../../my_util';
 
 function MesAnnonces(){
 
     const [loading, setLoading] = useState(true);
     const [data, setData]=useState([]);
     const token = localStorage.getItem('token');
-    const user = {
-        idUtilisateur : 'USR2'
-    }
 
     useEffect(() => {
         const fetchData = async () => {
           try {
             setLoading(true);
-            let url = process.env.REACT_APP_API_URL + 'annonces/utilisateur/' + user.idUtilisateur;
+            const fetchedUser = await connected(token);
+            let url = process.env.REACT_APP_API_URL + 'annonces/utilisateur/' + fetchedUser.idUtilisateur;
             let response = await fetch(url, {
               method: 'GET',
               headers: {

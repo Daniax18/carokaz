@@ -7,6 +7,7 @@ import Dialogue from '../../components/message/Dialogue';
 import './message.css';
 import { useParams } from 'react-router-dom';
 import { getMyInbox } from './utilMessage';
+import { connected } from '../../my_util';
 
 function Message(){
     const { idUtilisateur } = useParams();
@@ -14,10 +15,8 @@ function Message(){
     // console.log('otehr here is ' + idOther)
     const [loading, setLoading] = useState(true);
     const [inboxes, setInboxes]=useState([]);
+    const [user, setUser]=useState([]);
     const token = localStorage.getItem('token');
-    const user = {
-        idUtilisateur : 'USR1'
-    }
 
     const handleInboxMessageClick = (clickedId) => {
         // Update the idOther state when a message is clicked
@@ -31,7 +30,9 @@ function Message(){
           // const user = await connected(token)
   
           setLoading(true);
-          let url = process.env.REACT_APP_API_URL + 'inbox/' + user.idUtilisateur;
+          const fetchedUser = await connected(token);
+          setUser(fetchedUser)
+          let url = process.env.REACT_APP_API_URL + 'inbox/' + fetchedUser.idUtilisateur;
           let response = await fetch(url, {
             method: 'GET',
             headers: {
@@ -42,7 +43,7 @@ function Message(){
   
           if (response.ok) {
             let data = await response.json();
-            setInboxes(await getMyInbox(user.idUtilisateur, data.data, token))
+            setInboxes(await getMyInbox(fetchedUser.idUtilisateur, data.data, token))
 
           } else {
             console.error('Erreur de la requête:', response);

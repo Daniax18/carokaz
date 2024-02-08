@@ -34,7 +34,7 @@ function Navbar () {
             <div className="row align-items-center py-3 px-xl-5 justify-content-between">
                 <div className="col-lg-2 col-xs-12 col-md-12">
                     
-                    <Link to="/" className="navbar-brand d-flex align-items-center"> 
+                    <Link to="/Annonces" className="navbar-brand d-flex align-items-center"> 
                         <h1 className="m-0">
                             <i className="fa fa-car text-primary me-3" />CAR'OKAZ
                         </h1>
@@ -58,7 +58,7 @@ function Navbar () {
                             to="/Login" 
                             className="nav-item nav-link"
                         >
-                        Login
+                        Se connecter
                         </Link>
                     
                     </div>

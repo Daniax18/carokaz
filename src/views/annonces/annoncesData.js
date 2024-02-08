@@ -83,66 +83,66 @@ const annonces = [
 
 const marques = [
     {
-        id : 'M1',
+        id : 1 ,
         nom : 'Mercedes'
     },
     {
-        id : 'M2',
+        id : 2 ,
         nom : 'AUDI'
     }
 ]
 
 const boites = [
   {
-      id : 'B1',
+      id : 1 ,
       nom : 'Manuelle'
   },
   {
-      id : 'B2',
+      id : 2 ,
       nom : 'Automatique'
   }
 ]
 
 const energie = [
   {
-      id : 'E1',
+      id : 1 ,
       nom : 'Gasoil'
   },
   {
-      id : 'E2',
+      id : 2 ,
       nom : 'Essence'
   }
 ]
 
 const categories = [
   {
-      id : 'C1',
+      id : 1 ,
       nom : 'SUV'
   },
   {
-      id : 'C2',
+      id : 2 ,
       nom : 'Citadine'
   }
 ]
 
 const modeles = [
   {
-      id : 'MO1',
+      id : 1 ,
       nom : 'Q7'
   },
   {
-      id : 'MO2',
+      id : 2 ,
       nom : 'Q5'
   }
 ]
 
 const couleurs = [
   {
-      id : 'CO1',
+      id : 1 ,
       nom : 'Rouge'
   },
   {
-      id : 'CO2',
+      id : 2 ,
       nom : 'Vert'
   }
 ]

@@ -10,16 +10,29 @@ import Loader from '../../components/loader/Loader';
 
 function Annonces(){
 
-    const { annonces, marques, boites, categories, modeles, energie, couleurs } = annoncesData;
+    const {marques, boites, categories, modeles, energie, couleurs } = annoncesData;
 
     const [loading, setLoading] = useState(true);
     const [data, setData]=useState([]);
+    const [idMarque, setIdMarque] = useState('');
+    const [idCategorie, setIdCategorie] = useState('');
+
+    const handleCheckboxMarque = (id) => {
+        setIdMarque(id === idMarque ? '' : id);
+    };
+
+    const handleCheckboxCategorie = (id) => {
+        console.log('cate is ' + id)
+        setIdCategorie(id === idCategorie ? '' : id);
+      };
+
 
     useEffect(() => {
         // Simulating an asynchronous data fetch
-        setLoading(true);
+        setLoading(false);
         setTimeout(() => {
             let url = process.env.REACT_APP_API_URL + 'annonces/valide';
+            let url1 =  process.env.REACT_APP_API_URL + 'annonces/search?motCle=&prixMin=0&prixMax=20000000&idCategorie='+ idCategorie +'&idMarque='+ idMarque +'&idModel=&idBoite=&idEnergie=&idPlace=&idPorte=&idCouleur=&idVille=&kilometrageMin=0&kilometrageMax=15500000&consomationMin=6&consommationMax=20'
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function(){
               if( this.readyState === 4 ){
@@ -29,17 +42,20 @@ function Annonces(){
                   console.log(response);
                   setLoading(false);
                   setData(response.data);
+                }else{
+                    setData(null)
                 }
-              }
+              } 
             };
             // console.log(url);
-            xhttp.open( "GET" , url, true );
+            xhttp.open( "GET" , url1, true );
             xhttp.send(null);
-        }, 1000); // Simulating a 1-second delay
-    }, []);
+        }, 500); // Simulating a 1-second delay
+    }, [idMarque, idCategorie]);
     
 
-    
+   
+
     return(
         <div>
          {loading ? (
@@ -64,16 +80,16 @@ function Annonces(){
                     <div className="container-fluid pt-5">
                         <div className="row px-xl-5">
                             <div className="col-lg-3 col-md-12">
-                                <Filter title = "Categories" data = {categories} />
-                                <Filter title = "Marques" data = {marques} />
-                                <Filter title = "Modeles" data = {modeles} />
-                                <Filter title = "Energie" data = {energie} />
-                                <Filter title = "Boites" data = {boites} />
-                                <Filter title = "Couleur" data = {couleurs} />
+                                <Filter title = "Categories" data = {categories} handleCheckboxChange={handleCheckboxCategorie} nameId = 'id' value = 'nom' />
+                                <Filter title = "Marques" data = {marques} handleCheckboxChange={handleCheckboxMarque} nameId = 'id' value = 'nom' />
+                                <Filter title = "Modeles" data = {modeles} value = 'nom' />
+                                <Filter title = "Energie" data = {energie} value = 'nom' />
+                                <Filter title = "Boites" data = {boites} value = 'nom' />
+                                <Filter title = "Couleur" data = {couleurs} value = 'nom' />
                             </div>
                             <div className="col-lg-9 col-md-12">
                                 {/* <ListeAnnonces annonces = {annonces}  /> */}
-                                <ListeAnnonces annonces = {data}  />
+                                {data ? <ListeAnnonces annonces = {data}  /> : '' } 
                             </div>
                         </div>
                     </div>

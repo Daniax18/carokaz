@@ -3,21 +3,22 @@ import Navbar from '../../components/nav/Navbar';
 import Footer from '../../components/footer/Footer';
 import Loader from '../../components/loader/Loader';
 import ListFavoris from '../../components/listeAnnonces/ListeFavoris';
+import { connected } from '../../my_util';
 
 function Favoris(){
 
     const [loading, setLoading] = useState(true);
     const [data, setData]=useState([]);
     const token = localStorage.getItem('token');
-    const user = {
-      idUtilisateur : 'USR1'
-  }
 
     useEffect(() => {
         const fetchData = async () => {
           try {
             setLoading(true);
-            let url = process.env.REACT_APP_API_URL + 'favoris/favoris/' + user;
+            const fetchedUser = await connected(token);
+            // setUser(fetchedUser);
+            let url = process.env.REACT_APP_API_URL + 'favoris/favoris/' + fetchedUser.idUtilisateur;
+            console.log(url)
             let response = await fetch(url, {
               method: 'GET',
               headers: {
