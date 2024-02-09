@@ -8,6 +8,11 @@ function Navbar () {
 
     const token = localStorage.getItem('token');
 
+    const handleLogout = () => {
+        localStorage.clear();
+    
+        window.location.href = '/';
+      };
     return (
        <div>
             <div className="container-fluid bg-light p-0 mb-2">
@@ -34,13 +39,24 @@ function Navbar () {
             <div className="row align-items-center py-3 px-xl-5 justify-content-between">
                 <div className="col-lg-2 col-xs-12 col-md-12">
                     
-                    <Link to="/Annonces" className="navbar-brand d-flex align-items-center"> 
+                    <Link to="/" className="navbar-brand d-flex align-items-center"> 
                         <h1 className="m-0">
                             <i className="fa fa-car text-primary me-3" />CAR'OKAZ
                         </h1>
                     </Link>
                 </div>
-               
+                <div className="col-lg-4 col-xs-12 col-md-12 text-left">
+                    <form action="">
+                        <div className="input-group">
+                            <input type="text" className="form-control" placeholder="Search for cars..." />
+                            <div className="input-group-append">
+                                <span className="btn btn-outline bg-transparent text-primary">
+                                    <i className="fa fa-search" />
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
                 {!token ? (
                     <div className="col-lg-4 col-xs-12 d-flex flex-row">
                         <Link 
@@ -54,7 +70,7 @@ function Navbar () {
                 ) : (
                     <div className="col-lg-5 col-xs-12 d-flex flex-row">
                         <Link 
-                            to={`/Messages/${null}`}
+                            to="/Messages" 
                             className="nav-item nav-link"
                         >
                             Message
@@ -72,8 +88,9 @@ function Navbar () {
                             Mes favoris
                         </Link>
                         <Link 
-                            to="/Login" 
+                            to="#" 
                             className="nav-item nav-link"
+                            onClick={handleLogout}
                         >
                             Deconnexion
                         </Link>

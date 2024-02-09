@@ -61,7 +61,7 @@ function Annonce(props){
                             </tr>
                             <tr>
                                 <td> Porte </td>
-                                <td> {annonce.voiture.energie.nomPorte} </td>
+                                <td> {annonce.voiture.porte.nomPorte} </td>
                             </tr>
                             <tr>
                                 <td> Consommation </td>
